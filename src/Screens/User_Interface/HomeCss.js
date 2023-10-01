@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 export const homeStyle = makeStyles({
 
     Image_01: {
-        height: '105vh',
+        height: '100vh',
         width: '100vw'
     },
     app_bar: {

@@ -25,10 +25,10 @@ export default function Main_Slider() {
 
     }, [])
     const Text = [
-        { Heading: 'I AM Rohit', P: 'hello everyone this is the most entertaining charater Rohit tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
-        { Heading: 'I AM Rohit', P: 'hello everyone this is the most entertaining charater Rohit tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
-        { Heading: 'I AM Rohit', P: 'hello everyone this is the most entertaining charater Rohit tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
-        { Heading: 'I AM Rohit', P: 'hello everyone this is the most entertaining charater Rohit tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' }
+        { Heading: 'I AM Rohit', P: 'Hello everyone this is the most entertaining charater Rohit tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
+        { Heading: 'I AM Vikash', P: 'Hello everyone this is the most entertaining charater Vikash tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
+        { Heading: 'I AM Deepak', P: 'Hello everyone this is the most entertaining charater Deepak tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
+        { Heading: 'I AM Rohit', P: 'Hello everyone this is the most entertaining charater Rohit tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' }
 
     ]
 
@@ -39,11 +39,11 @@ export default function Main_Slider() {
 
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                         <Grid item xs={8}>
-                            <div><h1 style={{ color: 'white' }}>{item.Heading}</h1></div>
-                            <div><p style={{ color: 'white' }}>{item.P}</p></div>
+                            <div><h1 style={{ color: 'white', fontFamily: 'poppins', letterSpacing: 7 }}>{item.Heading}</h1></div>
+                            <div><p style={{ color: 'white', fontFamily: 'poppins', fontSize: 18, width: '25vw' }}>{item.P}</p></div>
                         </Grid>
                         <Grid item xs={4}>
-                            <div><img src={item.source} width={'70%'}></img></div>
+                            <div><img src={item.source} width={'74%'}></img></div>
                         </Grid>
                     </div>
                 </Grid>
@@ -61,8 +61,7 @@ export default function Main_Slider() {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: null, // Hide the previous arrow
-        nextArrow: null, // Hide the next arrow
+        arrows: false // Hide the arrow navigation
     };
 
     const Refferance = createRef();
@@ -80,9 +79,9 @@ export default function Main_Slider() {
                 <Slider ref={Refferance} {...settings}>
                     {playImage()}
                 </Slider>
-                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <div style={{ marginRight: '4%' }}><KeyboardArrowLeftIcon onClick={handleRightSlide} style={{ position: 'absolute', zIndex: 1, backgroundColor: 'white', borderRadius: 20, marginTop: '8.5%', marginRight: '2%', cursor: 'pointer', fontSize: 40 }} /></div>
-                    <div><KeyboardArrowRightIcon onClick={handleLeftSlide} style={{ position: 'absolute', zIndex: 1, marginTop: '8.5%', backgroundColor: 'white', borderRadius: 20, marginLeft: '2%', cursor: 'pointer', fontSize: 40 }} /></div>
+                <div style={{ width:'82%', display: 'flex', justifyContent: 'flex-end' }}>
+                    <div style={{ marginRight: '6%' }}><KeyboardArrowLeftIcon onClick={handleRightSlide} style={{ position: 'absolute', zIndex: 1, backgroundColor: 'white', borderRadius: 25, marginTop: '8.5%', marginRight: '2%', cursor: 'pointer', fontSize: 42 }} /></div>
+                    <div><KeyboardArrowRightIcon onClick={handleLeftSlide} style={{ position: 'absolute', zIndex: 1, marginTop: '8.5%', backgroundColor: 'white', borderRadius: 25, marginLeft: '2%', cursor: 'pointer', fontSize: 42 }} /></div>
                 </div>
             </div>
         </div>

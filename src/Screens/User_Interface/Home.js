@@ -44,7 +44,7 @@ export default function Home() {
                 </div>
             </div>
             <div>
-                <img src="https://images.unsplash.com/photo-1516557070061-c3d1653fa646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsYWNrfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" className={classes.Image_01}></img>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbjFARngTDeO5YhC1g9YoWfHCDlc0WB-HIjQ&usqp=CAU" className={classes.Image_01}></img>
             </div>
         </div>
     )
