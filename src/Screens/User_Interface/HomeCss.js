@@ -20,6 +20,17 @@ export const homeStyle = makeStyles({
         width:'80vw',
         height:'50vh'
 
-    }
+    },
+    DivStyle : {
+        background: '#ff416c',
+        background: '-webkit-linear-gradient(to right, #ff4b2b, #ff416c)',
+        background: 'linear-gradient(9deg, rgba(30, 0, 36, 1) 22%, rgba(15, 81, 98, 1) 72%)',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: '0 0',
+        height: '100vh',
+        width: '100vw',
+
+      }
 
 })
