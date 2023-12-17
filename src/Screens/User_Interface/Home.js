@@ -6,10 +6,15 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+
 // main Slider
 import Main_Slider_01 from "./Interface_Components/Main_Slider_01";
 
 export default function Home() {
+
+    const navigate=useNavigate();
+
     const classes = homeStyle();
     return (
         <div>
@@ -24,13 +29,13 @@ export default function Home() {
                                 PaperUp
                             </Typography>
                             <Typography style={{ display: 'flex', flexDirection: 'row', width: '22%', justifyContent: 'space-between' }}>
-                                <Typography fontFamily={'poppins'} color="white">
+                                <Typography className={classes.typography} fontFamily={'poppins'} color="white">
                                     About
                                 </Typography >
-                                <Typography fontFamily={'poppins'} color="white">
+                                <Typography className={classes.typography} fontFamily={'poppins'} color="white">
                                     Source
                                 </Typography>
-                                <Typography fontFamily={'poppins'} color="white">
+                                <Typography className={classes.typography} onClick={()=>navigate('/SignIn_SignUp')} fontFamily={'poppins'} color="white">
                                     Signin/Signup
                                 </Typography>
                             </Typography>

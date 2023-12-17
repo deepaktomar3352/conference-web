@@ -20,6 +20,9 @@ export const homeStyle = makeStyles({
         width:'80vw',
         height:'50vh'
 
+    },
+    typography:{
+        cursor:'pointer'
     }
 
 })

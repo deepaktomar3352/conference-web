@@ -10,6 +10,7 @@ import { Grid, colors } from "@mui/material";
 
 export default function Main_Slider() {
 
+
     const [Banner, setBanner] = useState([])
 
     // const fetchAllBanner = async () => {
@@ -25,10 +26,10 @@ export default function Main_Slider() {
 
     }, [])
     const Text = [
-        { Heading: 'I AM Rohit', P: 'Hello everyone this is the most entertaining charater Rohit tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
-        { Heading: 'I AM Vikash', P: 'Hello everyone this is the most entertaining charater Vikash tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
-        { Heading: 'I AM Deepak', P: 'Hello everyone this is the most entertaining charater Deepak tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
-        { Heading: 'I AM Rohit', P: 'Hello everyone this is the most entertaining charater Rohit tomar', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' }
+        { Heading: 'Hello Mr.Rohit ', P: 'Welcome  Mr.Rohit You can start Your document journey. We will Update you about Process', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
+        { Heading: 'Hello Mr.Vikash', P: 'Welcome  Mr.Rohit You can start Your document journey. We will Update you about Process', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
+        { Heading: 'Hello Mr.Deepak', P: 'Welcome  Mr.Rohit You can start Your document journey. We will Update you about Process', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' },
+        { Heading: 'Hello Mr.Rohit', P: 'Welcome  Mr.Rohit You can start Your document journey. We will Update you about Process', source: 'https://cdni.iconscout.com/illustration/premium/thumb/businessman-manager-holding-document-paper-checking-using-big-magnifying-glass-9330224-7595425.png?f=webp' }
 
     ]
 
@@ -38,9 +39,9 @@ export default function Main_Slider() {
                 <Grid xs={12} container style={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'row' }}>
 
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Grid item xs={8}>
-                            <div><h1 style={{ color: 'white', fontFamily: 'poppins', letterSpacing: 7 }}>{item.Heading}</h1></div>
-                            <div><p style={{ color: 'white', fontFamily: 'poppins', fontSize: 18, width: '25vw' }}>{item.P}</p></div>
+                        <Grid item xs={6}>
+                            <div><h1 style={{ color: 'white', fontFamily: 'poppins', letterSpacing: 7,fontSize:50,width:'20vw',textAlign:'start'}}>{item.Heading}</h1></div>
+                            <div ><p style={{ color: 'white', fontFamily: 'poppins', fontSize: 18, width: '27vw',textAlign:'start' }}>{item.P}</p></div>
                         </Grid>
                         <Grid item xs={4}>
                             <div><img src={item.source} width={'74%'}></img></div>
@@ -55,9 +56,9 @@ export default function Main_Slider() {
 
     var settings = {
         dots: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
+        // infinite: true,
+        // autoplay: true,
+        // autoplaySpeed: 3000,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -74,7 +75,7 @@ export default function Main_Slider() {
 
 
     return (
-        <div>
+        <div >
             <div style={{ width: '100%', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
                 <Slider ref={Refferance} {...settings}>
                     {playImage()}
