@@ -6,14 +6,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { Grid } from "@mui/material";
-<<<<<<< HEAD
-import { useNavigate } from "react-router-dom";
-
-=======
 import "./Interface_Components/styles.css"
->>>>>>> 07be42b41b670e317247500e3864460c45fcbb57
 // main Slider
 import Main_Slider_01 from "./Interface_Components/Main_Slider_01";
+import { useNavigate } from "react-router";
 
 export default function Home() {
 
