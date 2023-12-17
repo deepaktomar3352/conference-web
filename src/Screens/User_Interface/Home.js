@@ -6,8 +6,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { Grid } from "@mui/material";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 
+=======
+import "./Interface_Components/styles.css"
+>>>>>>> 07be42b41b670e317247500e3864460c45fcbb57
 // main Slider
 import Main_Slider_01 from "./Interface_Components/Main_Slider_01";
 
@@ -16,8 +20,9 @@ export default function Home() {
     const navigate=useNavigate();
 
     const classes = homeStyle();
+    
     return (
-        <div>
+        <div className={classes.DivStyle}  >
 
             <div>
                 <AppBar className={classes.app_bar} color='transparent' backgroundColor='transparent'>
@@ -48,9 +53,9 @@ export default function Home() {
                     <Main_Slider_01 />
                 </div>
             </div>
-            <div>
+            {/* <div >
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbjFARngTDeO5YhC1g9YoWfHCDlc0WB-HIjQ&usqp=CAU" className={classes.Image_01}></img>
-            </div>
+            </div> */}
         </div>
     )
 }
