@@ -49,9 +49,9 @@ export default function Home() {
                     <Main_Slider_01 />
                 </div>
             </div>
-            {/* <div >
+            <div >
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbjFARngTDeO5YhC1g9YoWfHCDlc0WB-HIjQ&usqp=CAU" className={classes.Image_01}></img>
-            </div> */}
+            </div>
         </div>
     )
 }
