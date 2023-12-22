@@ -8,13 +8,11 @@ import {
   ListItemIcon,
   ListItem,
 } from "@mui/material";
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import StarIcon from "@mui/icons-material/Star";
 import { useState } from "react";
 
-
-export default function  DocumentList() {
-
+export default function AcceptedDocument() {
   const [starMap, setStarMap] = useState({});
 
   const data = [
@@ -109,9 +107,9 @@ export default function  DocumentList() {
             <ListItem sx={{ background: "white" }}>
               <ListItemIcon>
                 <div>
-                {isStarActive ?  (
+                  {isStarActive ? (
                     <StarIcon
-                      onClick={() =>handleStar(item)}
+                      onClick={() => handleStar(item)}
                       sx={{ color: "gold", cursor: "pointer" }}
                     />
                   ) : (
@@ -166,22 +164,11 @@ export default function  DocumentList() {
                       background: "green",
                       color: "white",
                       borderRadius: 10,
+                 
                     }}
+                  
                   >
-                    Accept
-                  </Button>
-                </Typography>
-                <Typography>
-                  <Button
-                    size="medium"
-                    sx={{
-                      background: "red",
-                      color: "white",
-                      marginRight: "1vw",
-                      borderRadius: 10,
-                    }}
-                  >
-                    Reject
+                    Accepted
                   </Button>
                 </Typography>
               </Typography>

@@ -1,0 +1,190 @@
+import {
+    Box,
+    List,
+    ListItemButton,
+    ListItemText,
+    Typography,
+    Button,
+    ListItemIcon,
+    ListItem,
+  } from "@mui/material";
+  import StarBorderIcon from "@mui/icons-material/StarBorder";
+  import StarIcon from "@mui/icons-material/Star";
+  import { useState } from "react";
+  
+
+  export default function StarredDocuments() {
+    
+    const [starMap, setStarMap] = useState({});
+  
+    const data = [
+      {
+        documentno: 1,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+      {
+        documentno: 2,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+      {
+        documentno: 3,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+      {
+        documentno: 4,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+      {
+        documentno: 5,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+      {
+        documentno: 6,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+      {
+        documentno: 7,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+      {
+        documentno: 8,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+      {
+        documentno: 9,
+        username: "Rohit tomar",
+        subject:
+          "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
+        date: "01-dec-2023",
+        time: "2:00pm",
+      },
+    ];
+  
+    const handleStar = (item) => {
+      // Create a new object with the current star state and toggle it for the specific documentNo
+      setStarMap((prevStarMap) => ({
+        ...prevStarMap,
+        [item.documentno]: !prevStarMap[item.documentno],
+      }));
+    };
+    const showDocument = () => {
+      return data.map((item) => {
+        const isStarActive = starMap[item.documentno] || false;
+  
+        return (
+          <Box component="div">
+            <List>
+              <ListItem sx={{ background: "white" }}>
+                <ListItemIcon>
+                  <div>
+                    {isStarActive ? (
+                      <StarIcon
+                        onClick={() => handleStar(item)}
+                        sx={{ color: "gold", cursor: "pointer" }}
+                      />
+                    ) : (
+                        <StarIcon
+                        onClick={() => handleStar(item)}
+                        sx={{ color: "gold", cursor: "pointer" }}
+                      />
+                    )}
+                  </div>
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography
+                    variant="h6"
+                    color="text.secondary"
+                    style={{
+                      width: "10vw",
+                      // overflow: "hidden",
+                      // textOverflow: "ellipsis",
+                      // whiteSpace: "nowrap",
+                    }}
+                  >
+                    <b>{item.username}</b>
+                  </Typography>
+                </ListItemText>
+                <ListItemText>
+                  <Typography
+                    variant="h6"
+                    color="text.secondary"
+                    style={{
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      whiteSpace: "nowrap",
+                      marginLeft: "10vw",
+                      marginRight: "2vw",
+                    }}
+                  >
+                    {item.subject}
+                  </Typography>
+                </ListItemText>
+                <Typography
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-around",
+                    width: "30vw",
+                  }}
+                >
+                  <Typography>
+                    <Button
+                      size="medium"
+                      sx={{
+                        background: "green",
+                        color: "white",
+                        borderRadius: 10,
+                   
+                      }}
+                    
+                    >
+                      Accepted
+                    </Button>
+                  </Typography>
+                </Typography>
+                <Typography sx={{ width: "15vw" }}>
+                  <Typography>{item.time}</Typography>
+                  <Typography>{item.date}</Typography>
+                </Typography>
+              </ListItem>
+            </List>
+          </Box>
+        );
+      });
+    };
+  
+    return <Box sx={{ marginTop: -3 }}>{showDocument()}</Box>;
+  }
+  

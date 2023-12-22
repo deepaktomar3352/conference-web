@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 export const homeStyle = makeStyles({
 
     Image_01: {
-        height: '100vh',
+        height: '110vh',
         width: '100vw'
     },
     app_bar: {
@@ -18,11 +18,14 @@ export const homeStyle = makeStyles({
         marginTop:'15%',
         marginLeft:'10%',
         width:'80vw',
-        height:'50vh'
+        height:'58vh'
 
     },
     typography:{
         cursor:'pointer'
+    },
+    DivStyle:{
+        height:'95vh'
     }
 
 })

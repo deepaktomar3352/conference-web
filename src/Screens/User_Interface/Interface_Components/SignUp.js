@@ -1,9 +1,12 @@
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import React from "react";
-
+import {useNavigate} from 'react-router'
 
 
 function SignUpForm() {
+
+  const navigate=useNavigate();
+  
   const [state, setState] = React.useState({
     name: "",
     email: "",
@@ -70,7 +73,7 @@ function SignUpForm() {
           onChange={handleChange}
           placeholder="Password"
         />
-        <button>Sign Up</button>
+        <button onClick={()=>navigate('/UserDashboard')}>Sign Up</button>
       </form>
     </div>
   );

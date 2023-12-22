@@ -20,6 +20,14 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 // import components
 import MainListItems from "./ListItems";
 import DocumentList from "./DocumentList";
+import AcceptedDocument from "./AcceptedDocument/AcceptedDocument";
+import StarredDocuments from "./StarredDocuments.js/StarredDocuments";
+
+import { useNavigate } from "react-router";
+// import context
+import { useContext } from "react";
+import { DataContext } from "../../../../Context/Context";
+import { handleContext } from "../../../../Context/Context";
 
 function Copyright(props) {
   return (
@@ -89,9 +97,27 @@ const Drawer = styled(MuiDrawer, {
 const defaultTheme = createTheme();
 
 export default function UserDashboard() {
+
+  const { render, setRender } = useContext(DataContext);
+
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+
+  const handleRendring = () => {
+    if (render == "index") {
+      return <DocumentList />;
+    } else if (render == "accepted") {
+      return <AcceptedDocument />;
+    }
+    else if (render == "starred") {
+      return <StarredDocuments />;
+    }
+    else if (render =="") {
+      return <DocumentList />;
+    }
   };
 
   return (
@@ -122,6 +148,7 @@ export default function UserDashboard() {
               color="inherit"
               noWrap
               sx={{ flexGrow: 1, cursor: "pointer" }}
+              onClick={() => navigate("/Home")}
             >
               Home
             </Typography>
@@ -169,7 +196,7 @@ export default function UserDashboard() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid xs={12} item>
-                <DocumentList/>
+                {handleRendring()}
               </Grid>
             </Grid>
           </Container>
