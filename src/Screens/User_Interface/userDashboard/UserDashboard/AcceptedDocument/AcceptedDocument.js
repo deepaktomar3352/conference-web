@@ -34,7 +34,7 @@ export default function AcceptedDocument() {
     },
     {
       documentno: 3,
-      username: "Rohit tomar",
+      username: "Deepak Tomar",
       subject:
         "This is the demo data of documents in this demo we can visualize the view documents in this demo we can visualize the view",
       date: "01-dec-2023",

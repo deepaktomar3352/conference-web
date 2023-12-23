@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "D:/Conference-web/conference-web/src/Screens/User_Interface/Interface_Components/styles.css";
+import "./Interface_Components/styles.css";
 
 import SignInForm from "./Interface_Components/SignIn";
 import SignUpForm from "./Interface_Components/SignUp";
