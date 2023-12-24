@@ -11,11 +11,16 @@ import {
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import { useState } from "react";
-import { useHistory, Link } from 'react-router-dom';
-
+import {  Link } from 'react-router-dom';
+// import Context
+import { useContext } from "react";
+import { DataContext } from "../../../../Context/Context";
 
 export default function  DocumentList() {
-  
+
+  // for context
+
+  const {setRender}=useContext(DataContext)
 
   const [starMap, setStarMap] = useState({});
 
@@ -124,7 +129,9 @@ export default function  DocumentList() {
                   )}
                 </div>
               </ListItemIcon>
+              <div style={{display:'flex',width:'70vw',cursor:'pointer'}}  onClick={()=>setRender('openDocument')}>
               <ListItemText>
+                
                 <Typography
                 
                   variant="h6"
@@ -136,8 +143,12 @@ export default function  DocumentList() {
                     // textOverflow: "ellipsis",
                     // whiteSpace: "nowrap",
                   }}
+                
                 >
+                  {/* <Link to={`/openmessage/`}> */}
+
                   <b>{item.username}</b>
+                  {/* </Link> */}
                 </Typography>
               </ListItemText>
               <ListItemText>
@@ -153,7 +164,10 @@ export default function  DocumentList() {
                     marginRight: "2vw",
                   }}
                 >
+                 
+
                   {item.subject}
+                 
                 </Typography>
               </ListItemText>
               <Typography
@@ -195,6 +209,7 @@ export default function  DocumentList() {
                 <Typography>{item.time}</Typography>
                 <Typography>{item.date}</Typography>
               </Typography>
+              </div>
             </ListItem>
           </List>
         </Box>

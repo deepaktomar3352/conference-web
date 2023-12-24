@@ -4,7 +4,7 @@ import UserDashboard from "./Screens/User_Interface/userDashboard/UserDashboard/
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Context
 import { DataProvider } from "./Context/Context";
-
+import OpenMessage from "./Screens/User_Interface/userDashboard/UserDashboard/OpenDocument/OpenDocument";
 function App() {
   return (
     <div className="App">
@@ -14,6 +14,7 @@ function App() {
             <Route Component={Home} path="/Home"></Route>
             <Route Component={SignIn_SignUp} path="/SignIn_SignUp"></Route>
             <Route Component={UserDashboard} path="/UserDashboard"></Route>
+            <Route Component={OpenMessage} path="/openmessage"></Route>
           </Routes>
         </Router>
       </DataProvider>

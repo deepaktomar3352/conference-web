@@ -22,7 +22,7 @@ import MainListItems from "./ListItems";
 import DocumentList from "./DocumentList";
 import AcceptedDocument from "./AcceptedDocument/AcceptedDocument";
 import StarredDocuments from "./StarredDocuments.js/StarredDocuments";
-
+import OpenDocument from "./OpenDocument/OpenDocument";
 import { useNavigate } from "react-router";
 // import context
 import { useContext } from "react";
@@ -115,6 +115,9 @@ export default function UserDashboard() {
     else if (render == "starred") {
       return <StarredDocuments />;
     }
+    else if (render == "openDocument") {
+      return <OpenDocument />;
+    }
     else if (render =="") {
       return <DocumentList />;
     }
@@ -197,6 +200,7 @@ export default function UserDashboard() {
             <Grid container spacing={3}>
               <Grid xs={12} item >
                 {handleRendring()}
+                {/* <OpenMessage/> */}
               </Grid>
             </Grid>
           </Container>
