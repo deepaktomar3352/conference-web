@@ -6,7 +6,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
-import { Grid, TextField } from "@mui/material";
+import { Grid, Snackbar, TextField } from "@mui/material";
+import { DropzoneArea } from "react-mui-dropzone";
 
 // for dropdown
 import { useTheme } from "@mui/material/styles";
@@ -18,9 +19,15 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
 
+// for dialogbox
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <Slide direction="down" ref={ref} {...props} />;
 });
+
+// for Snackbar
+function TransitionRight(props) {
+  return <Slide  sx={{bgcolor:'green'}} {...props} direction="right" />;
+}
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -34,6 +41,18 @@ const MenuProps = {
 };
 
 export default function DialogBox(props) {
+  // for snackbar
+  const [open, setOpen] = React.useState(false);
+  const [transition, setTransition] = React.useState(undefined);
+
+  const handleClick = (Transition) => () => {
+    setTransition(() => Transition);
+    setOpen(true);
+  };
+
+  const handleSnackClose = () => {
+    setOpen(false);
+  };
   // for dialogbox
   const handleClose = () => {
     props.setOpen(false);
@@ -93,14 +112,17 @@ export default function DialogBox(props) {
                   fullWidth
                   id="outlined-multiline-flexible"
                   label="Subject"
-                //   multiline
-                  maxRows={4}
+                  //   multiline
+                  // maxRows={4}
+                  sx={{ mt: 2 }}
                 />
               </Grid>
               <Grid xs={12} item>
                 <div>
-                  <FormControl sx={{ width: 552 }}>
-                    <InputLabel id="demo-multiple-chip-label">Receivers</InputLabel>
+                  <FormControl sx={{ width: 535 }}>
+                    <InputLabel id="demo-multiple-chip-label">
+                      Receivers
+                    </InputLabel>
                     <Select
                       fullWidth
                       labelId="demo-multiple-chip-label"
@@ -109,7 +131,10 @@ export default function DialogBox(props) {
                       value={personName}
                       onChange={handleChange}
                       input={
-                        <OutlinedInput id="select-multiple-chip" label="Chip" />
+                        <OutlinedInput
+                          id="select-multiple-chip"
+                          label="Receivers"
+                        />
                       }
                       renderValue={(selected) => (
                         <Box
@@ -135,20 +160,55 @@ export default function DialogBox(props) {
                   </FormControl>
                 </div>
               </Grid>
-              <Grid xs={6} item>
-                <Button fullWidth variant="contained" disableElevation>
-                  Send
-                </Button>
+              <Grid xs={12} item>
+                <DropzoneArea
+                  acceptedFiles={[
+                    ".pdf",
+                    "application/pdf",
+                    ".doc",
+                    ".docx",
+                    "application/msword",
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                  ]}
+                  dropzoneText={
+                    "Drag and drop a PDF or Word file here or click"
+                  }
+                  onChange={(files) => console.log("Files:", files)}
+                />
               </Grid>
               <Grid xs={6} item>
-                <Button fullWidth variant="contained" disableElevation>
+                <Button
+                  onClick={handleClick(TransitionRight)}
+                  fullWidth
+                  variant="contained"
+                  disableElevation
+                >
+                  Send
+                </Button>
+                <Box>
+                  <Snackbar
+                 
+                    open={open}
+                    onClose={handleSnackClose}
+                    TransitionComponent={transition}
+                    message="Document has been sent"
+                    key={transition ? transition.name : ""}
+                  />
+                </Box>
+              </Grid>
+              <Grid xs={6} item>
+                <Button
+                  onClick={() => handleClose()}
+                  fullWidth
+                  variant="contained"
+                  disableElevation
+                >
                   Cancle
                 </Button>
               </Grid>
             </Grid>
           </DialogContentText>
         </DialogContent>
-        <DialogActions></DialogActions>
       </Dialog>
     </React.Fragment>
   );
