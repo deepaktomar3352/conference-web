@@ -102,9 +102,9 @@ export default function AcceptedDocument() {
       const isStarActive = starMap[item.documentno] || false;
 
       return (
-        <Box component="div">
-          <List>
-            <ListItem sx={{ background: "white" }}>
+        <Box  component="div">
+          <List >
+            <ListItem sx={{ background: "white" }} >
               <ListItemIcon>
                 <div>
                   {isStarActive ? (

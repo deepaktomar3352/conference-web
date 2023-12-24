@@ -11,9 +11,11 @@ import {
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import { useState } from "react";
+import { useHistory, Link } from 'react-router-dom';
 
 
 export default function  DocumentList() {
+  
 
   const [starMap, setStarMap] = useState({});
 
@@ -124,10 +126,12 @@ export default function  DocumentList() {
               </ListItemIcon>
               <ListItemText>
                 <Typography
+                
                   variant="h6"
                   color="text.secondary"
                   style={{
                     width: "10vw",
+                    cursor: "pointer",
                     // overflow: "hidden",
                     // textOverflow: "ellipsis",
                     // whiteSpace: "nowrap",
@@ -142,6 +146,7 @@ export default function  DocumentList() {
                   color="text.secondary"
                   style={{
                     overflow: "hidden",
+                    cursor: "pointer",
                     textOverflow: "ellipsis",
                     whiteSpace: "nowrap",
                     marginLeft: "10vw",
@@ -166,6 +171,7 @@ export default function  DocumentList() {
                       background: "green",
                       color: "white",
                       borderRadius: 10,
+                      cursor: "pointer",
                     }}
                   >
                     Accept
