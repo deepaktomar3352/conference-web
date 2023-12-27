@@ -108,7 +108,9 @@ export default function UserDashboard() {
 
   const handleRendring = () => {
     if (render == "index") {
-      return <DocumentList />;
+      return <Box sx={{ backgroundColor: 'white' }}>
+        <DocumentList />;
+      </Box>
     } else if (render == "accepted") {
       return <AcceptedDocument />;
     }
@@ -118,7 +120,7 @@ export default function UserDashboard() {
     else if (render == "openDocument") {
       return <OpenDocument />;
     }
-    else if (render =="") {
+    else if (render == "") {
       return <DocumentList />;
     }
   };
