@@ -106,12 +106,23 @@ export default function DialogBox(props) {
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
             <Grid container spacing={2}>
-              <Grid xs={12} item>
+            <Grid xs={6} item>
                 {" "}
                 <TextField
                   fullWidth
                   id="outlined-multiline-flexible"
                   label="Subject"
+                  //   multiline
+                  // maxRows={4}
+                  sx={{ mt: 2 }}
+                />
+                </Grid>
+              <Grid xs={6} item>
+                {" "}
+                <TextField
+                  fullWidth
+                  id="outlined-multiline-flexible"
+                  label="Description"
                   //   multiline
                   // maxRows={4}
                   sx={{ mt: 2 }}
@@ -187,7 +198,7 @@ export default function DialogBox(props) {
                 </Button>
                 <Box>
                   <Snackbar
-                 
+                 autoHideDuration={3000}
                     open={open}
                     onClose={handleSnackClose}
                     TransitionComponent={transition}
