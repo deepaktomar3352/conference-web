@@ -2,12 +2,13 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ShortcutIcon from '@mui/icons-material/Shortcut';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Avatar from '@mui/material/Avatar';
 import { useContext } from 'react';
 import { DataContext } from '../../../../../Context/Context';
 
 export default function OpenDocument(props) {
- const navigate = useNavigate()
+  const navigate = useNavigate()
   const data = [
     {
       documentno: 1,
@@ -86,14 +87,26 @@ export default function OpenDocument(props) {
   const dataIndexToShow = 0;
   const selectedItem = data[dataIndexToShow];
   return (
-    <div style={{ height: 'auto', width: '100%', padding: 20, borderRadius: 10,backgroundColor:'white' }}>
-     <div onClick={()=>setRender("index")} style={{textAlign:'start',width:25,height:20}}>
-     <ArrowBackIcon style={{fontSize:18,cursor:'pointer'}}  />
-     </div>
+    <div style={{ height: 'auto', width: '100%', padding: 20, borderRadius: 10, backgroundColor: 'white' }}>
+      <div onClick={() => setRender("index")} style={{ textAlign: 'start', width: 25, height: 20 }}>
+        <ArrowBackIcon style={{ fontSize: 18, cursor: 'pointer' }} />
+      </div>
       <div key={selectedItem.documentno}>
-
-        <div style={{ textAlign: 'start',marginTop:'2%',paddingLeft: 50,fontWeight:'bold' }}>
+       
+        <div style={{display:'flex',justifyContent:'start',alignItems:'center',marginTop:"2%"}} >
+        <div>
+          <Avatar
+            sx={{ bgcolor: 'orange',width: 28, height: 28  }}
+            alt="Remy Sharp"
+            src="/broken-image.jpg"
+           
+          >
+            R
+          </Avatar>
+        </div>
+        <div style={{ textAlign: 'start', paddingLeft: 10, fontWeight: 'bold', }}>
           {selectedItem.username}
+        </div>
         </div>
 
         <div style={{ paddingLeft: 50, marginTop: '3%', textAlign: 'start', }}>
@@ -101,24 +114,24 @@ export default function OpenDocument(props) {
         </div>
 
       </div>
-      <div style={{textAlign:'start',marginTop:'5%',paddingLeft: 50,}}>
-        <img style={{width:250,cursor:'pointer'}} src={'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D'} />
+      <div style={{ textAlign: 'start', marginTop: '5%', paddingLeft: 50, }}>
+        <img style={{ width: 250, cursor: 'pointer' }} src={'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D'} />
       </div>
-      <div style={{ display: 'flex',paddingLeft:50,width:235,justifyContent:'space-between',marginTop:'2%'}}>
+      <div style={{ display: 'flex', paddingLeft: 50, width: 235, justifyContent: 'space-between', marginTop: '2%' }}>
         <Button
           color="secondary"
           size="small"
           variant="outlined"
-          
-          style={{ borderRadius: '20px',display:'flex',justifyContent:'center',alignItems:'center',textTransform:'capitalize' }}
-        ><ShortcutIcon style={{padding:3,transform: 'scaleX(-1)',marginRight:3,marginBottom:2}} />Reply</Button>
+
+          style={{ borderRadius: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', textTransform: 'capitalize' }}
+        ><ShortcutIcon style={{ padding: 3, transform: 'scaleX(-1)', marginRight: 3, marginBottom: 2 }} />Reply</Button>
         <Button
           color="secondary"
           size="small"
           variant="outlined"
-          
-          style={{ borderRadius: '20px',display:'flex',justifyContent:'center',alignItems:'center',textTransform:'capitalize' }}
-        ><ShortcutIcon style={{padding:3,}} />Forward</Button>
+
+          style={{ borderRadius: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', textTransform: 'capitalize' }}
+        ><ShortcutIcon style={{ padding: 3, }} />Forward</Button>
       </div>
     </div>
   )
